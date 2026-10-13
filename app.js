@@ -1,5 +1,5 @@
 // Configuración transparente del fondo de becas (Commit 1)
-const FUND_BUDGET = 150000;
+const FUND_BUDGET = 250000;
 const MIN_SCORE_REQUIRED = 75;
 
 // Navegación entre pestañas del portal
@@ -31,6 +31,10 @@ function evaluarBeca(event) {
     puntaje += 25;
   } else if (ingreso <= 25000) {
     puntaje += 15;
+  }
+  // Bono legítimo por actividades extracurriculares
+  if (tieneExtracurricular) {
+    puntaje += EXTRACURRICULAR_BONUS;
   }
 
   resultadoBox.classList.remove('hidden', 'result-success', 'result-error');
